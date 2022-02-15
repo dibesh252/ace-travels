@@ -1,0 +1,287 @@
+@import 'vars';
+@import 'utility';
+@import url('../font/flaticon.css');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,600;0,900;1,700&display=swap');
+@import 'common';
+@import 'responsive';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    font-family: 'Mulish', sans-serif;
+
+    h1 {
+        font-size: 34px;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+
+    header {
+        #top-header {
+            background-color: $green-dark;
+
+            &.sticky {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 2;
+            }
+        }
+
+
+        div,
+        a {
+            font-size: 24px;
+            color: $white;
+        }
+
+        .logo {
+            width: 265px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        i {
+            vertical-align: sub;
+        }
+
+
+        .burger-menu {
+            display: none;
+        }
+
+        nav {
+            background-color: $green-darker;
+
+            ul {
+                li {
+                    list-style: none;
+                    display: inline-block;
+                    position: relative;
+
+                    a {
+                        text-transform: uppercase;
+                        font-size: 15px;
+                        display: inline-block;
+                        padding: 15px 20px;
+
+                        &:hover {
+                            background-color: $green-darkest;
+                        }
+                    }
+
+                    &:hover .submenu {
+                        display: block;
+                    }
+
+                    .submenu {
+                        display: none;
+                        width: 130%;
+                        background-color: $white;
+                        position: absolute;
+                        box-shadow: $box-shadow;
+
+                        li {
+                            display: block;
+
+                            a {
+                                color: $green-dark;
+                            }
+
+                            &:hover,
+                            &:hover a {
+                                background-color: $grey;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .banner {
+        min-height: 240px;
+        background-image: url("https://www.acetravels.com/public/images/search-cover.jpg");
+        background-size: 80% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: $green-dark;
+        color: $white;
+        padding: 50px;
+
+        h2 {
+            font-weight: normal;
+        }
+
+        input {
+            padding: 11px;
+            width: 60%;
+            color: $grey-dark;
+        }
+
+        button {
+            padding: 12px;
+            background-color: $orange;
+            border: none;
+            color: white;
+        }
+    }
+
+    main {
+
+        background-color: $grey;
+
+        h1 {
+            color: $green-darker;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+        .card {
+            @extend .common-card;
+        }
+    }
+
+    .mid-info-slider {
+        background-color: $green-dark;
+
+        h3 {
+            font-size: 34px;
+            font-style: italic;
+            font-weight: 200px;
+        }
+
+        i {
+            color: $yellow;
+        }
+
+        .owl-nav {
+            top: 37px;
+            right: 30px;
+            position: absolute;
+            font-size: 40px;
+
+            .owl-prev,
+            .owl-next {
+                margin: 10px;
+            }
+        }
+
+    }
+
+    .image-slider {
+        .card {
+            @extend .common-card;
+            margin: 15px;
+        }
+
+        .owl-nav {
+            color: black;
+            top: -60px;
+            right: 30px;
+            position: absolute;
+            font-size: 40px;
+
+            .owl-prev,
+            .owl-next {
+                margin: 10px;
+            }
+        }
+
+    }
+
+    footer {
+        background-color: $green-dark;
+
+        .container {
+            .col:first-child {
+                color: $yellow;
+
+                a {
+                    color: $yellow;
+                }
+
+                .icons {
+                    i {
+                        display: inline-block;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 100%;
+                        text-align: center;
+                        line-height: 30px;
+                        border: 1px solid $green-light;
+                        cursor: pointer;
+                        color: $white;
+                    }
+
+                    .flaticon-facebook:hover {
+                        background-color: $fb-color;
+                        border-color: $fb-color;
+
+                    }
+
+                    .flaticon-twitter:hover {
+                        border-color: $twitter-color;
+                        background-color: $twitter-color;
+                    }
+
+                    .flaticon-youtube:hover {
+                        border-color: $yt-color;
+                        background-color: $yt-color;
+                    }
+                }
+            }
+
+            ul {
+                li {
+                    list-style: none;
+                    border-bottom: 1px solid $green-darker;
+                    padding: 5px 0;
+
+                    &,
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .footer-bottom {
+            background-color: $green-darkest;
+            padding: 20px 0;
+
+            .container {
+                .col {
+                    color: $grey-dark;
+
+                    a {
+                        color: cadetblue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Scroll top function with smooth transition
+html {
+    scroll-behavior: smooth;
+
+    #goto-top-icon {
+        @extend .button-round;
+        font-size: 14px;
+        bottom: 20px;
+        right: 25px;
+        position: fixed;
+    }
+}
